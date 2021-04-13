@@ -1,9 +1,9 @@
 import React from 'react';
 import cx from 'classnames';
 import SliderContext from './context'
-import ShowDetailsButton from './ShowDetailsButton'
+import Link from 'next/link'
 import Mark from './Mark'
-import './Item.scss'
+// import './Item.scss'
 
 const Item = ({ movie }) => (
   <SliderContext.Consumer>
@@ -17,8 +17,12 @@ const Item = ({ movie }) => (
             'item--open': isActive,
           })}
         >
-          <img src={movie.image} alt="" />
-          <ShowDetailsButton onClick={() => onSelectSlide(movie)} />
+          <Link href={"ciao"}>
+            <a>
+              <img src={movie.image} alt="" />
+            </a>
+          </Link>
+          {/*<ShowDetailsButton onClick={() => onSelectSlide(movie)} /> -->*/}
           {isActive && <Mark />}
         </div>
       );
